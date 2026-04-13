@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Click Counter</title>
+    <link rel="stylesheet" href="style.css">
+    
+  </head>
+  <body>
+    <div class="forfirsttask">
+      <div id="colorevent">
+        <h1 id="text">Click count: 0</h1>
+        <button id="btn">Click Me</button>
+        <p id="message"></p>
+      </div>
+    </div>
+    <div class="secondtask">
+        <input type="text" id="name" placeholder="Enter your name">
+        <button id="clickcolor">click to Change</button> 
+        <p id="addname"></p>
+
+    </div>
+
+    <script>
+      let count = 0;
+      const color = document.getElementById("colorevent");
+      const button = document.getElementById("btn");
+      const text = document.getElementById("text");
+      const message = document.getElementById("message");
+
+      button.addEventListener("click", function () {
+        count++;
+
+        text.innerText = "Click count: " + count;
+
+        color.style.backgroundColor =
+          "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+        if (count >= 5) {
+          message.innerText = "Stop clicking 😂";
+        }
+      });
+
+      const entername=document.getElementById("name")
+      const addName=document.getElementById("addname")
+      const colorchangebutten=document.getElementById("clickcolor")
+
+      colorchangebutten.addEventListener("click", function (){
+        addName.innerText=entername.value
+        addName.style.color="#" + Math.floor(Math.random() * 16777215).toString(16);
+
+
+      });
+
+
+
+
+    </script>
+  </body>
+</html>
